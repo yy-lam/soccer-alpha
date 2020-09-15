@@ -12,7 +12,9 @@ class Config(object):
     SECRET_KEY = 'SECRET'
 
     # Connect to the database
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') 
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+        'postgresql+psycopg2://postgres:pg1639@localhost:5432/socceralpha'
+
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
