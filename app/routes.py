@@ -3,7 +3,7 @@ from flask import render_template, flash, redirect, url_for, request, g, \
 from flask_login import login_user, current_user, logout_user, login_required
 from app import app, db
 from app.forms import *
-from app.models import *
+from app.models import User
 from werkzeug.urls import url_parse
 
 import json, requests
