@@ -73,10 +73,11 @@ def forgot():
 
 
 @app.route('/test')
+@login_required()
 def test():
-    #with open('data/fixtures.json', 'r') as f:
-    #    fixtures = json.load(f)['api']['fixtures']
-
+    with open('data/fixtures.json', 'r') as f:
+        fixtures = json.load(f)['api']['fixtures']
+    '''
     url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/league/2790/next/8"
 
     querystring = {"timezone":"Europe/London"}
@@ -89,7 +90,7 @@ def test():
     response = requests.request("GET", url, headers=headers, params=querystring)
 
     fixtures = response.json()['api']['fixtures']
-    
+    '''
     return render_template('pages/match.html', fixtures=fixtures, N=len(fixtures))
 
 @app.route('/predict', methods=['GET' ,'POST'])
