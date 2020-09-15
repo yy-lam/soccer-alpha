@@ -15,9 +15,9 @@
                         {% set date, time = fixture['event_date'][:16].split('T') %}
                         <div class="panel-heading">{{ date }} {{ time }}</div>
                         <div class="panel-body">
-                            <h3 class="text-center">{{ home['team_name'] }} 
+                            <h4 class="text-center">{{ home['team_name'] }} 
                             (Home) vs. {{ away['team_name']  }} (Away)
-                            </h3>
+                            </h4>
                             <div class="row">
                                 <div class="col-xs-2 col-sm-6 text-center">
                                     <img src= {{ home['logo'] }} style="width:50%">

@@ -3,3 +3,5 @@
 env
 venv
 scraper.py
+rootkey.csv
+api.txt
