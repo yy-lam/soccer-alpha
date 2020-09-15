@@ -8,6 +8,8 @@ import logging, os
 from logging import Formatter, FileHandler
 from logging.handlers import RotatingFileHandler
 
+from flask_s3 import FlaskS3
+
 #----------------------------------------------------------------------------#
 # App Config.
 #----------------------------------------------------------------------------#
@@ -20,6 +22,7 @@ migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = 'login'
 bootstrap = Bootstrap(app)
+s3 = FlaskS3(app)
 
 if app.config['LOG_TO_STDOUT']:
     stream_handler = logging.StreamHandler()

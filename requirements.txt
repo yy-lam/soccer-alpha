@@ -5,6 +5,7 @@ Flask-Login
 Flask-Migrate
 Flask-SQLAlchemy
 Flask-WTF
+Flask-S3
 Jinja2
 requests
 six

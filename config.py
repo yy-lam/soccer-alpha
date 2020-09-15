@@ -16,3 +16,5 @@ class Config(object):
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
+
+    FLASKS3_BUCKET_NAME = 'socceralphaassets'

@@ -3,11 +3,11 @@
 
 
 {% block app_content %}
-    <h3>Next 5 Games in Premier League</h3>
+    <h3>Next {{ N }} Games in Premier League</h3>
     <div class="container">
         <div class="row">
             {% for i in range(N) %}
-                <div class="col-md-6">
+                <div class="col-lg-6">
                     <div class="panel panel-primary"> 
                         {% set fixture = fixtures[i]  %}
                         {% set home = fixture['homeTeam'] %}
@@ -15,7 +15,7 @@
                         {% set date, time = fixture['event_date'][:16].split('T') %}
                         <div class="panel-heading">{{ date }} {{ time }}</div>
                         <div class="panel-body">
-                            <h3 class="text-center">{{ home['team_name'] }} 
+                            <h4 class="text-center">{{ home['team_name'] }} 
                             (Home) vs. {{ away['team_name']  }} (Away)
                             </h3>
                             <div class="row">

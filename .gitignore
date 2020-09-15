@@ -2,4 +2,6 @@
 .DS_Store
 env
 venv
+api.txt
 scraper.py
+rootkey.csv

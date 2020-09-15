@@ -4,6 +4,7 @@ docstring class for match statistics
 
 import numpy as np
 import pickle
+from app import s3
 
 
 class Match(object):

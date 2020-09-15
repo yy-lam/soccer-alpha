@@ -6,7 +6,7 @@ from app.forms import *
 from app.models import *
 from werkzeug.urls import url_parse
 
-import json
+import json, requests
 import numpy as np
 import pickle
 
@@ -74,8 +74,22 @@ def forgot():
 
 @app.route('/test')
 def test():
-    with open('data/fixtures.json', 'r') as f:
-        fixtures = json.load(f)['api']['fixtures']
+    #with open('data/fixtures.json', 'r') as f:
+    #    fixtures = json.load(f)['api']['fixtures']
+
+    url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/league/2790/next/8"
+
+    querystring = {"timezone":"Europe/London"}
+
+    headers = {
+        'x-rapidapi-host': "api-football-v1.p.rapidapi.com",
+        'x-rapidapi-key': "9a4cc675c7mshdaa84f5b192909ap1f9979jsn18ef7493b7db"
+    }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    fixtures = response.json()['api']['fixtures']
+    
     return render_template('pages/match.html', fixtures=fixtures, N=len(fixtures))
 
 @app.route('/predict', methods=['GET' ,'POST'])
