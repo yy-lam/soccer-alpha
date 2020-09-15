@@ -1,0 +1,79 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+    {% if title %}{{ title }} - SoccerAlpha{% else %}Welcome to SoccerAlpha{% endif %}
+{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ url_for('home') }}">SoccerAlpha V0.1</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li {% if request.endpoint == 'home' %} class="active" {% endif %}>
+                        <a href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li {% if request.endpoint == 'about' %} class="active" {% endif %}>
+                        <a href="{{ url_for('about') }}">About</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if current_user.is_anonymous %}
+                    <li><a href="{{ url_for('register') }}">Signup</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    {% else %}
+                        {#<li><a href="{{ url_for('user', username=current_user.username) }}">Profile</a></li>#}
+                        <li><a>Hi {{ curren_user.username }}!</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-info" role="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        {# application content needs to be provided in the app_content block #}
+        {% block app_content %}{% endblock %}
+    </div>
+
+{#
+    <div id="footer">
+        <div class="container">
+        <p>yyeung-lam &copy; All Rights Reserved.</p>
+        {% block footer %}{% endblock %}
+        </div>
+    </div>
+    #}
+ 
+<div class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+      <p class="navbar-text pull-left">© 2020 Built By yyeung-lam</p>
+
+      <a href="http://github.com/yyeung-lam" class="navbar-btn btn-info btn pull-right">
+      <span class="glyphicon glyphicon-cloud" style="color:white"></span> Hosting on GitHub soon</a>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+    

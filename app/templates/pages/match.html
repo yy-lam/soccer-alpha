@@ -1,0 +1,80 @@
+{% extends 'layouts/base.html' %}
+
+
+
+{% block app_content %}
+    <h3>Next 5 Games in Premier League</h3>
+    <div class="container">
+        <div class="row">
+            {% for i in range(N) %}
+                <div class="col-md-6">
+                    <div class="panel panel-primary"> 
+                        {% set fixture = fixtures[i]  %}
+                        {% set home = fixture['homeTeam'] %}
+                        {% set away = fixture['awayTeam'] %}
+                        {% set date, time = fixture['event_date'][:16].split('T') %}
+                        <div class="panel-heading">{{ date }} {{ time }}</div>
+                        <div class="panel-body">
+                            <h3 class="text-center">{{ home['team_name'] }} 
+                            (Home) vs. {{ away['team_name']  }} (Away)
+                            </h3>
+                            <div class="row">
+                                <div class="col-xs-2 col-sm-6 text-center">
+                                    <img src= {{ home['logo'] }} style="width:50%">
+                                </div>
+                                <div class="col-xs-2 col-sm-6 text-center">
+                                    <img src= {{ away['logo'] }} style="width:50%"> 
+                                </div>
+                            </div>    
+                            <br>
+                            <a href="#", id="predict_match_{{ i }}">
+                                <button type="button" class="btn btn-success btn-lg" style="margin: 20px;">
+                                    Predict
+                                </button>
+                            </a>
+                                <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+                                <script type=text/javascript>
+                                $(function () {
+                                    $('a#predict_match_{{ i }}').bind('click', function() {
+                                        $.getJSON('/predict', {
+                                            home: {{ fixture['homeTeam']['team_id'] }},
+                                            away: {{ fixture['awayTeam']['team_id'] }}
+                                        }, function(data) {
+                                            $("#result_{{ i }}").text(data.prediction);
+                                            $("#win_{{ i }}").text(data.p_win);
+                                            $("#lose_{{ i }}").text(data.p_lose);
+                                            $("#draw_{{ i }}").text(data.p_draw);
+                                            $("#progress_win_{{ i }}").css('width', 
+                                                data.p_win+'%').attr('aria-valuenow', data.p_win);
+                                            $("#progress_lose_{{ i }}").css('width', 
+                                                data.p_lose+'%').attr('aria-valuenow', data.p_lose);
+                                            $("#progress_draw_{{ i }}").css('width', 
+                                                data.p_draw+'%').attr('aria-valuenow', data.p_draw);
+                                        });
+                                        return false;
+                                    });
+                                });
+                                </script>
+                                <p>Prediction: <span id=result_{{ i }}> </span></p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped" 
+                                         id=progress_win_{{ i }} style="width: 33.3%">
+                                         <p style="color:black"><span id=win_{{ i }}>?</span>% Win</p>
+                                    </div>
+                                    <div class="progress-bar progress-bar-danger progress-bar-striped"
+                                        id=progress_lose_{{ i }} style="width: 33.3%">
+                                        <p style="color:black"><span id=lose_{{ i }}>?</span>% Lose</p>
+                                    </div>
+                                    <div class="progress-bar progress-bar-warning progress-bar-striped"
+                                        id=progress_draw_{{ i }} style="width: 33.3%">
+                                        <p style="color:black"><span id=draw_{{ i }}>?</span>% Draw</p>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock  %}

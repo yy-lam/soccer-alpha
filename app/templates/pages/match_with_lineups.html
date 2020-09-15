@@ -1,0 +1,31 @@
+{% extends "layouts/base.html" %}
+
+{% block app_content %}
+    <div class="panel panel-default">
+        <div class="panel-heading">Match Lineups</div>
+        <div class="panel-body">
+            <p>...</p>
+        </div>
+        <table class="table table-hover">
+            <tr>
+                <th colspan="2" class="text-center">
+                    {{ match.data['homeTeam']['team_name'] }} (Home)
+                </th>
+                <th colspan="2" class="text-center">
+                    {{ match.data['awayTeam']['team_name'] }} (Away)
+                </th>
+            </tr>
+            {% set home_lineups, away_lineups = match.get_lineups() %}
+            {% for i in range(11) %}
+                <tr>
+                    <td>{{ home_lineups[i].player }}</td>
+                    <td>{{ home_lineups[i].pos }}</td>
+                    <td>{{ away_lineups[i].player }}</td>
+                    <td>{{ away_lineups[i].pos }}</td>
+
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}

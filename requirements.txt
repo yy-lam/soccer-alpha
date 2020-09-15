@@ -1,0 +1,20 @@
+alembic
+Flask
+Flask-Bootstrap
+Flask-Login
+Flask-Migrate
+Flask-SQLAlchemy
+Flask-WTF
+Jinja2
+requests
+six
+SQLAlchemy
+Werkzeug
+WTForms
+coverage
+pickle
+numpy
+scikit-learn
+# heroku
+psycopg2
+gunicorn

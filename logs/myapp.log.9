@@ -1,0 +1,89 @@
+2020-09-09 13:11:19,462 INFO: myapp.log [in /Users/wade/Documents/CS/soccer-prediction-platform/app/__init__.py:36]
+2020-09-14 03:21:18,948 INFO: myapp.log [in /Users/wade/Documents/CS/soccer-prediction-platform/app/__init__.py:36]
+2020-09-14 03:25:43,089 INFO: myapp.log [in /Users/wade/Documents/CS/soccer-prediction-platform/app/__init__.py:36]
+2020-09-14 23:57:54,912 INFO: myapp.log [in /Users/wade/Documents/CS/soccer-prediction-platform/app/__init__.py:36]
+2020-09-15 00:31:56,448 INFO: myapp.log [in /Users/wade/Documents/CS/soccer-prediction-platform/app/__init__.py:36]
+2020-09-15 00:32:03,436 ERROR: Exception on /indexsdaasd [GET] [in /Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/app.py", line 1926, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/app.py", line 1908, in raise_routing_exception
+    raise request.routing_exception
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/ctx.py", line 350, in match_request
+    result = self.url_adapter.match(return_rule=True)
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/werkzeug/routing.py", line 1945, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/app.py", line 1816, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/app.py", line 1744, in handle_http_exception
+    return handler(e)
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/app/errors.py", line 7, in not_found_error
+    return render_template('errors/.html'), 404
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/jinja2/environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/jinja2/loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/templating.py", line 89, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: errors/.html
+2020-09-15 00:32:07,793 ERROR: Exception on /indexs [GET] [in /Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/app.py", line 1926, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/app.py", line 1908, in raise_routing_exception
+    raise request.routing_exception
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/ctx.py", line 350, in match_request
+    result = self.url_adapter.match(return_rule=True)
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/werkzeug/routing.py", line 1945, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/app.py", line 1816, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/app.py", line 1744, in handle_http_exception
+    return handler(e)
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/app/errors.py", line 7, in not_found_error
+    return render_template('errors/.html'), 404
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/jinja2/environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/jinja2/loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Users/wade/Documents/CS/soccer-prediction-platform/env/lib/python3.6/site-packages/flask/templating.py", line 89, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: errors/.html
