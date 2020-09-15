@@ -12,7 +12,6 @@ SQLAlchemy
 Werkzeug
 WTForms
 coverage
-pickle
 numpy
 scikit-learn
 # heroku
