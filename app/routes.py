@@ -73,7 +73,7 @@ def forgot():
 
 
 @app.route('/test')
-@login_required()
+@login_required
 def test():
     with open('data/fixtures.json', 'r') as f:
         fixtures = json.load(f)['api']['fixtures']
