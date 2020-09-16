@@ -31,7 +31,7 @@ This part depends on what you choose as your database system. I used PostgreSQL 
 - SQLAlchemy
 - psycopg2
 
-#### Prediction
+#### Prediction:
 
 - Numpy
 - scikit-learn
