@@ -93,7 +93,7 @@ def test():
     headers = {
         'x-rapidapi-host': "api-football-v1.p.rapidapi.com",
         # provide your api key to api-football
-        'x-rapidapi-key': "9a4cc675c7mshdaa84f5b192909ap1f9979jsn18ef7493b7db"
+        'x-rapidapi-key': ""
     }
 
     response = requests.request("GET", url, headers=headers, params=querystring)
