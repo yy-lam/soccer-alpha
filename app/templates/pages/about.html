@@ -7,11 +7,11 @@
 </div>
 <p class="lead">SoccerAlpha sparked from one of my failed interviews where I was asked how to predict soccer games, if I use machine learning...</p>
 <h3>Ideas behind SoccerAlpha</h3>
-<p>SoccerAlpha is purely based on player's ratings from 34 attributes (more info on <a href="https://www.sofifa.com/">sofifa</a>). In a word, SoccerAlpha is kind of an "AI" :)
-Two main models are proposed - Random Forest and Convolutional Neural Network. Random Forest has roughly 60% validation accuracy and has low variance so it is currenly being used. CNN has a high variance which suggest it may need a larger training set.</p> 
+<p>SoccerAlpha is purely based on player's ratings from 34 attributes (more info on <a href="https://www.sofifa.com/">sofifa</a>). In a word, SoccerAlpha is kind of an "AI" :)</p>
+<p>Two main models are proposed - Random Forest and Convolutional Neural Network. Random Forest has roughly 60% validation accuracy and has low variance so it is currenly being used. CNN has a high variance which suggest it may need a larger training set.</p> 
 
 <h3>How I built it</h3>
-<p>I spent some time scrapping players' data from <a href="https://www.sofifa.com/">sofifa</a>, retrieved lineups of 380 Premier League games in season 2018~2019 from <a href="https://www.api-football.com/">api-football</a>, managed them in a PostgreSQL database. The reason why I used ratings of players on lineups is that it easily fits in a supervised machine learning model, and we may see dramatic feature importance between players of two teams on specific position or on specific attribute. The Random Forest model using data from a whole season gave me roughly 60% validation accuracy. There is certainly a lot to improve but for now it's a good start</p>
+<p>I spent some time scrapping players' data from <a href="https://www.sofifa.com/">sofifa</a>, retrieved lineups of 380 Premier League games in season 2018~2019 from <a href="https://www.api-football.com/">api-football</a>, managed them in a PostgreSQL database. The reason why I use ratings of players on lineups is that it easily fits in a supervised machine learning model, and we may see dramatic feature importance between players of two teams on specific position or on specific attribute. The Random Forest model using data from a whole season gave me roughly 60% validation accuracy. There is certainly a lot to improve but for now it's a good start</p>
 
 <h3>Future work</h3> 
 <p>I will expand the number of matches and improve performance of CNN.</p>
