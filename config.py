@@ -13,7 +13,7 @@ class Config(object):
 
     # Connect to the database: provide your database url
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-        'postgresql+psycopg2://postgres:xxx@localhost:5432/socceralpha'
+        'postgresql+psycopg2://acount:password@localhost:5432/socceralpha'
 
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
