@@ -4,7 +4,7 @@
 
 ### Currently supports Premire League season 2020 ~ 2021
 
-[SoccerAlpha](https://soccer-alpha.herokuapp.com) is hosted on Heroku
+[SoccerAlpha](https://www.soccer-alpha.com) is hosted on Heroku
 
 ### Requirements:
 
@@ -24,7 +24,7 @@
 - Requests
 - Werkzeug
 
-#### Data Base:
+#### Database:
 
 This part depends on what you choose as your database system. I used PostgreSQL for deploying on Heroku.
 
