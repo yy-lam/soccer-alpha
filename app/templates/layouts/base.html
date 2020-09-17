@@ -1,7 +1,15 @@
 {% extends 'bootstrap/base.html' %}
 
+
 {% block title %}
     {% if title %}{{ title }} - SoccerAlpha{% else %}Welcome to SoccerAlpha{% endif %}
+{% endblock %}
+
+{% block head %}
+
+    {{ super() }}
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
 {% endblock %}
 
 {% block navbar %}
