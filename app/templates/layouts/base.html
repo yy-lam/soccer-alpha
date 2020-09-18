@@ -1,6 +1,4 @@
 {% extends 'bootstrap/base.html' %}
-
-
 {% block title %}
     {% if title %}{{ title }} - SoccerAlpha{% else %}Welcome to SoccerAlpha{% endif %}
 {% endblock %}
@@ -9,11 +7,13 @@
 
     {{ super() }}
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='style.css')}}"/>
 
 {% endblock %}
 
 {% block navbar %}
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-light" style="background-color: #4B0082;">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -22,25 +22,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url_for('home') }}">SoccerAlpha V0.1</a>
+                <a class="navbar-brand" href="{{ url_for('home') }}"style="color:white">SoccerAlpha V0.1</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li {% if request.endpoint == 'home' %} class="active" {% endif %}>
-                        <a href="{{ url_for('home') }}">Home</a>
+                        <a href="{{ url_for('home') }}"style="color:white">Home</a>
                     </li>
                     <li {% if request.endpoint == 'about' %} class="active" {% endif %}>
-                        <a href="{{ url_for('about') }}">About</a>
+                        <a href="{{ url_for('about') }}"style="color:white">About</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if current_user.is_anonymous %}
-                    <li><a href="{{ url_for('register') }}">Signup</a></li>
-                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('register') }}"style="color:white">Signup</a></li>
+                    <li><a href="{{ url_for('login') }}"style="color:white">Login</a></li>
                     {% else %}
                         {#<li><a href="{{ url_for('user', username=current_user.username) }}">Profile</a></li>#}
                         <li><a>Hi {{ current_user.username }}!</a></li>
-                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    <li><a href="{{ url_for('logout') }}"style="color:white">Logout</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -49,7 +49,8 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
+    <div class="container" style="display: flex;
+      min-height: 85vh;flex-direction: column;">
         {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for message in messages %}
@@ -70,29 +71,31 @@
         </div>
     </div>
     #}
- 
-<div class="navbar navbar-default navbar-fixed-bottom">
+{% block footer %}
+    <div class="navbar navbar-light navbar-static-bottom"
+         style="margin: 0px; background-color: #4B0082;">
     <div class="container">
-      <p class="navbar-text pull-left">© 2020 Built By yyeung-lam</p>
+      <p class="navbar-text pull-left" style="color:white">© 2020 Built By yyeung-lam</p>
 
       <a href="http://github.com/yyeung-lam/soccer-alpha" class="navbar-btn btn-info btn pull-right">
-      <span class="glyphicon glyphicon-cloud" style="color:white"></span> Deployed on GitHub</a>
+      <span class="glyphicon glyphicon-cloud" style="color:white"></span> GitHub</a>
     </div>
-</div>
+    </div>
+{% endblock %}
+
 
 {% endblock %}
 
 {% block scripts %}
     {{ super() }}
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-178114843-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-178114843-1');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178114843-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-178114843-1');
+    </script>
 
 {% endblock %}
 
