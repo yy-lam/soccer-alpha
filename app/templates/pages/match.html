@@ -3,7 +3,7 @@
 
 
 {% block app_content %}
-    <h3>Next {{ N }} Games in Premier League</h3> 
+    <h2>Next {{ N }} Games in Premier League</h2> 
     <div class="container">
     <div class="row">   
         <p class="pull-left">Today is {{ date }} (Europe/London)</p>
@@ -23,16 +23,16 @@
                             </h4>
                             <div class="row">
                                 <div class="col-xs-2 col-sm-6 text-center">
-                                    <img src= {{ home['logo'] }} style="width:50%">
+                                    <img src= {{ home['logo'] }} style="width:50%" id="team_image">
                                 </div>
                                 <div class="col-xs-2 col-sm-6 text-center">
-                                    <img src= {{ away['logo'] }} style="width:50%"> 
+                                    <img src= {{ away['logo'] }} style="width:50%" id="team_image"> 
                                 </div>
                             </div>    
                             <br>
                             <a href="#", id="predict_match_{{ i }}">
-                                <button type="button" class="btn btn-success btn-lg" style="margin: 20px;">
-                                    Predict
+                                <button type="button" class="btn btn-success btn-lg" 
+                                        style="margin: 20px;">Predict
                                 </button>
                             </a>
                                 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

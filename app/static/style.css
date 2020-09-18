@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+}
+
+/*
+ * Formatting the header area
+ */
+header {
+  background-color: #DFB887;
+  height: 35px;
+  width: 100%;
+  opacity: .9;
+  margin-bottom: 10px;
+}
+header h1.logo {
+  margin: 0;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  float: left;
+}
+header h1.logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+/*
+ * Centering the body content
+ */
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+p {
+    font-size: 1.1em;
+}
+
+h1 {
+    margin-top: 10px;
+}
+
+h2 {
+  font-size: 3em;
+  margin-top: 10px;
+  text-align: center;
+  letter-spacing: 0px;
+}
+h3 {
+  font-size: 2em;
+  font-weight: 200;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: center;
+  letter-spacing: 0px;
+  color: #999;
+}
+
+.navbar a {
+    font-size: 1.15em;
+    font-family: Helvetica, sans-serif;
+}
+
+#team_image {
+    margin-top: 10px;
+    max-width: 50%;
+    height: auto;
+
+}
