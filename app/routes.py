@@ -86,7 +86,7 @@ def test():
     #    fixtures = json.load(f)['api']['fixtures']
     
     # league_id for premier league 2020 ~ 2021: 2790
-    url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/league/2790/next/8"
+    url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/league/3456/next/8"
 
     querystring = {"timezone":"Europe/London"}
 
